@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Chatbox Arcade</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand">ChatBlox Arcade</div>
+            <div class="media-links">
+                <button class="mini-btn" data-media="youtube">YouTube</button>
+                <button class="mini-btn" data-media="spotify">Spotify</button>
+                <button class="mini-btn" data-media="music">Music</button>
+            </div>
+        </header>
+
+        <div class="layout">
+            <aside class="panel left-panel">
+                <div class="auth-box">
+                    <h3>Account Login</h3>
+                    <div id="status" style="color:#7dd3fc; margin-bottom:10px;">Ready</div>
+                    <div id="loginBox">
+                        <form id="loginForm" class="form-grid">
+                            <input id="loginUsername" placeholder="Username" />
+                            <input id="loginPassword" type="password" placeholder="Password" />
+                            <button class="primary-btn" type="submit">Login</button>
+                        </form>
+                    </div>
+                    <div id="welcomeUser" style="margin-top:12px; font-weight:700;">Guest</div>
+                </div>
+
+                <div class="auth-box">
+                    <h3>Create Account</h3>
+                    <form id="registerForm" class="form-grid">
+                        <input id="registerUsername" placeholder="New username" />
+                        <input id="registerPassword" type="password" placeholder="Password" />
+                        <input id="registerColor" type="color" value="#ffffff" />
+                        <button class="success-btn" type="submit">Register</button>
+                    </form>
+                </div>
+            </aside>
+
+            <main class="panel chat-panel" id="chatBox">
+                <div class="messages" id="messages"></div>
+                <form id="chatForm" class="chat-form">
+                    <input id="chatInput" placeholder="Type a message..." />
+                    <button class="primary-btn" type="submit">Send</button>
+                </form>
+            </main>
+
+            <aside class="panel right-panel">
+                <div class="admin-box">
+                    <h3>Users</h3>
+                    <ul id="userList" class="user-list"></ul>
+                </div>
+
+                <div id="adminBox" class="admin-box hidden">
+                    <h3>Admin Menu</h3>
+                    <form id="adminForm" class="form-grid">
+                        <select id="adminAction">
+                            <option value="mute">Mute</option>
+                            <option value="ban">Ban</option>
+                            <option value="kick">Kick</option>
+                            <option value="color">Set Color</option>
+                            <option value="rank">Set Rank</option>
+                        </select>
+                        <input id="adminTarget" placeholder="Target user" />
+                        <input id="adminValue" placeholder="Color or rank value" />
+                        <input id="adminDuration" type="number" min="1" max="120" value="5" placeholder="Minutes" />
+                        <button class="danger-btn" type="submit">Run Action</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+
+        <div class="games-grid">
+            <div class="game-card">
+                <h3>Snake</h3>
+                <canvas id="snakeCanvas" width="220" height="220"></canvas>
+            </div>
+
+            <div class="game-card">
+                <h3>Bird Shooter</h3>
+                <canvas id="birdCanvas" width="220" height="220"></canvas>
+            </div>
+
+            <div class="game-card">
+                <h3>Pizza Maker</h3>
+                <div id="pizzaOrder" style="margin-bottom:12px; color:#fbbf24; font-weight:700;">Order: loading...</div>
+                <div style="display:grid; gap:8px; margin-bottom:12px;">
+                    <button class="mini-btn" data-ingredient="cheese">Cheese</button>
+                    <button class="mini-btn" data-ingredient="sauce">Sauce</button>
+                    <button class="mini-btn" data-ingredient="pepperoni">Pepperoni</button>
+                    <button class="mini-btn" data-ingredient="mushroom">Mushroom</button>
+                    <button class="mini-btn" data-ingredient="pineapple">Pineapple</button>
+                </div>
+                <div id="pizzaStatus">Ready</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
+"},{
